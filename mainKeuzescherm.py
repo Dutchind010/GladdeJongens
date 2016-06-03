@@ -37,7 +37,6 @@ def main():
     form = QTKeuzescherm()  # We set the form to be our ExampleApp (design)
     form.show()  # Show the form
     app.exec_()  # and execute the app
-    QTKeuzescherm.tijd()
 
 
 if __name__ == '__main__':  # if we're running file directly and not importing it
