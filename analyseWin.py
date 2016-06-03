@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Analysewin.ui'
 #
-# Created: Wed Jun  1 05:47:59 2016
+# Created: Fri Jun  3 13:44:51 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -59,8 +59,22 @@ class Ui_analyseWin(object):
         self.tableWidget = QtGui.QTableWidget(analyseWin)
         self.tableWidget.setGeometry(QtCore.QRect(10, 160, 691, 391))
         self.tableWidget.setObjectName(_fromUtf8("tableWidget"))
-        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setColumnCount(7)
         self.tableWidget.setRowCount(0)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(4, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(5, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(6, item)
 
         self.retranslateUi(analyseWin)
         QtCore.QObject.connect(self.cboxSelectie, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(QString)")), self.lQueryObject.setText)
@@ -79,4 +93,18 @@ class Ui_analyseWin(object):
         self.lTypeOnderzoek.setText(_translate("analyseWin", "Wat wilt u analyseren?", None))
         self.lQueryObject.setText(_translate("analyseWin", "Onderzoeker:", None))
         self.lTypeOnderzoek_2.setText(_translate("analyseWin", "Op wat wilt u analyseren?", None))
+        item = self.tableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("analyseWin", "id", None))
+        item = self.tableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("analyseWin", "ip", None))
+        item = self.tableWidget.horizontalHeaderItem(2)
+        item.setText(_translate("analyseWin", "dns", None))
+        item = self.tableWidget.horizontalHeaderItem(3)
+        item.setText(_translate("analyseWin", "timestamp", None))
+        item = self.tableWidget.horizontalHeaderItem(4)
+        item.setText(_translate("analyseWin", "ttl", None))
+        item = self.tableWidget.horizontalHeaderItem(5)
+        item.setText(_translate("analyseWin", "geolocation", None))
+        item = self.tableWidget.horizontalHeaderItem(6)
+        item.setText(_translate("analyseWin", "project", None))
 

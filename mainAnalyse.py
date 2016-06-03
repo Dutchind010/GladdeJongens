@@ -17,25 +17,30 @@ class QTAnalyse(QtGui.QDialog, analyseWin.Ui_analyseWin):
 		
 	def analyse_laden(self):
 		self.tableWidget.clear()
-		cnx = mysql.connector.connect(user='root', password='desaw2', host='127.0.0.1', database='ipfit5')
+		cnx = mysql.connector.connect(user='root', password='toor', host='127.0.0.1', database='ipfit5')
 		cursor = cnx.cursor()
 
 		#laden gegevens
 		query = ("SELECT * FROM records")
 		cursor.execute(query) 
+		
+		for row, form in enumerate(cursor):
+			self.tableWidget.insertRow(row)
+			for column, item in enumerate(form):
+				print(str(item))
+				self.tableWidget.setItem(row, column, QtGui.QTableWidgetItem(str(item)))
+				
+				
+		'''
 		rows = cursor.fetchall()
 
 		for row in rows:
 			rowPosition = self.tableWidget.rowCount()
 			self.tableWidget.insertRow(rowPosition)
 			#self.tableView.addItem("------------------")
-			for items in row:
-				#self.tableWidget.addItem(str(items))
-				#onderstaand werkt nog niet, volgens mij zijn er nog geen kolommen benoemd / aangemaakt
-				self.tableWidget.setItem(rowPosition , 0, QtGui.QTableWidgetItem("text1"))
-				self.tableWidget.setItem(rowPosition , 1, QtGui.QTableWidgetItem("text2"))
-				self.tableWidget.setItem(rowPosition , 2, QtGui.QTableWidgetItem("text3"))
-				
+			self.tableWidget.setItem(rowPosition , 5, QtGui.QTableWidgetItem(str(row)))
+							
+		'''		
 		cnx.close()
 		
 
