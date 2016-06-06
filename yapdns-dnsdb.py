@@ -9,8 +9,8 @@ client = DnsdbClient(server, apikey)
 cnx = mysql.connector.connect(user='root', password='toor', host='127.0.0.1', database='ipfit5')
 cursor = cnx.cursor()
 
-# laden gegevens
-query = ("SELECT DISTINCT dns FROM records ORDER BY dns LIMIT 30")
+# laden van gegevens
+query = ("SELECT DISTINCT dns FROM records ORDER BY dns LIMIT 30") #WHERE idProject = 1
 cursor.execute(query)
 
 for row, form in enumerate(cursor):
