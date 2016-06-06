@@ -13,6 +13,7 @@ class QTAnalyse(QtGui.QDialog, analyseWin.Ui_analyseWin):
         # Simple reason why we use it here is that it allows us to
         # access variables, methods etc in the design.py file
         super(self.__class__, self).__init__()
+        #Vangt de klik van de knoppen op
         self.setupUi(self)  # This is defined in design.py file automatically
         self.btnAnalyse.clicked.connect(self.analyse_laden)
 
