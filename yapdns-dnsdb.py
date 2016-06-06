@@ -10,7 +10,7 @@ cnx = mysql.connector.connect(user='root', password='toor', host='127.0.0.1', da
 cursor = cnx.cursor()
 
 # laden van gegevens
-query = ("SELECT DISTINCT dns FROM records ORDER BY dns LIMIT 30") #WHERE idProject = 1
+query = ("SELECT DISTINCT dns FROM records WHERE idProject = 1 ORDER BY dns LIMIT 30") #
 cursor.execute(query)
 
 for row, form in enumerate(cursor):
